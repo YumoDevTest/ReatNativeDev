@@ -35,15 +35,17 @@ import {
 import HelloComponent from './HelloComponent';
 export default class setup extends Component {
     render() {
+        console.log('HelloComponent render')
         return (
             <View style={styles.container}>
                 <HelloComponent
-                    name="wks"
+                    name="wks hhl"
                 />
             </View>
         );
     }
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
