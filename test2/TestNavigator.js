@@ -2,13 +2,15 @@
  * Created by yumodev on 18/2/5.
  */
 import React from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, Text, Button, StyleSheet, ScrollView} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import Register from '../test1/register'
 import TestStyle from './TestSytle'
+import TestFlex from './TestFlex'
+import TestFlatList from './TestFlatList'
 
 const HomeScreen = ({navigation}) =>(
-    <View >
+    <ScrollView >
         <Button
             style={styles.navBtn}
             onPress={()=>navigation.navigate('Details')}
@@ -23,7 +25,18 @@ const HomeScreen = ({navigation}) =>(
             style={styles.navBtn}
             onPress={()=>navigation.navigate('TestStyle')}
             title="Go to TestStyle"/>
-    </View>
+
+        <Button
+            style={styles.navBtn}
+            onPress={()=>navigation.navigate('TestFlex')}
+            title="Go to TestFlex"/>
+
+
+        <Button
+            style={styles.navBtn}
+            onPress={()=>navigation.navigate('TestFlatList')}
+            title="Go to TestFlatList"/>
+    </ScrollView>
 );
 
 const DetailsScreen = ({navigation}) => (
@@ -60,6 +73,18 @@ const TestNavigator = StackNavigator({
             navigationOptions:{
                 headerTitle:'TestStyle'
             }
+        },
+        TestFlex:{
+            screen:TestFlex,
+            navigationOptions:{
+                headerTitle:'TestFlex'
+            }
+        },
+        TestFlatList: {
+            screen: TestFlatList,
+            navigationOptions: {
+                headerTitle: 'TestFlatList'
+            }
         }
     }
 );
@@ -73,7 +98,7 @@ let styles = StyleSheet.create({
         backgroundColor:'red'
     },
     navBtn:{
-        marginTop:20,
+        margin:20,
         backgroundColor:'red'
     }
 });
